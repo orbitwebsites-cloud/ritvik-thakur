@@ -48,7 +48,7 @@ export const projects = [
     highlights: [
       "End-to-end: outreach → design → build → deploy",
       "Hand-coded, performance-first sites",
-      "Real paying local clients",
+      "Spec client sites (Slocum's Bowling Center)",
     ],
     links: [],
     featured: true,
@@ -59,13 +59,14 @@ export const projects = [
     year: "2026",
     tagline: "A modern, responsive site for a local bowling center.",
     description:
-      "A client website delivered through OrbitBoyzz — a clean, responsive marketing site for a local bowling center, built on a component-driven design system with shadcn/ui and smooth motion. Shipped and client-ready.",
+      "A spec site built through OrbitBoyzz — a clean, responsive marketing site for a local bowling center, built on a component-driven design system with shadcn/ui and smooth motion.",
     tech: ["React", "Tailwind CSS", "shadcn/ui", "Framer Motion"],
     highlights: [
       "Component-driven design system",
       "Fully responsive, motion-enhanced UI",
-      "Delivered to a real client",
+      "Concept build — spec site for a local business",
     ],
+    spec: true,
     links: [],
     featured: true,
   },

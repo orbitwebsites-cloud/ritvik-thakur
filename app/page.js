@@ -56,9 +56,16 @@ function ProjectCard({ p }) {
   return (
     <article className="reveal group flex flex-col rounded-2xl border border-neutral-200 bg-white p-7 transition-all duration-300 hover:border-neutral-300 hover:shadow-[0_12px_40px_-12px_rgba(0,0,0,0.12)]">
       <div className="mb-4 flex items-center justify-between gap-4">
-        <span className="text-xs font-medium uppercase tracking-wider text-accent">
-          {p.type}
-        </span>
+        <div className="flex items-center gap-2">
+          <span className="text-xs font-medium uppercase tracking-wider text-accent">
+            {p.type}
+          </span>
+          {p.spec && (
+            <span className="rounded-full bg-amber-100 px-2 py-0.5 text-xs font-medium text-amber-700">
+              Spec build
+            </span>
+          )}
+        </div>
         <span className="text-xs text-neutral-400">{p.year}</span>
       </div>
 
@@ -154,7 +161,7 @@ export default function Home() {
         <p className="mt-6 max-w-2xl animate-rise text-lg leading-relaxed text-neutral-600">
           I&apos;m {ME.name} — a student developer and the founder of{" "}
           <span className="font-medium text-ink">OrbitBoyzz</span>, a web
-          agency. I like taking an idea from a blank folder to a live, secure,
+          agency where I design sites for local businesses. I like taking an idea from a blank folder to a live, secure,
           production app — and I ship.
         </p>
         <div className="mt-9 flex animate-rise flex-wrap items-center gap-4">
@@ -253,17 +260,21 @@ export default function Home() {
 
           <div className="mt-9 grid grid-cols-2 gap-4 sm:grid-cols-4">
             {[
-              { big: "142", small: "contributions in the last year" },
-              { big: "Top 1%", small: "TypeScript engineers (Algora)" },
-              { big: "4+", small: "languages used in the open" },
-              { big: "Weekly", small: "active, including weekends" },
+              { big: "142", small: "contributions in the last year", href: "https://github.com/orbitwebsites-cloud" },
+              { big: "Top 1%", small: "TypeScript (Algora leaderboard)", href: "https://github.com/orbitwebsites-cloud" },
+              { big: "4+", small: "languages used in the open", href: null },
+              { big: "Weekly", small: "active, including weekends", href: null },
             ].map((s) => (
               <div
                 key={s.small}
                 className="rounded-2xl border border-neutral-200 bg-white p-5"
               >
                 <div className="text-3xl font-semibold tracking-tight text-ink">
-                  {s.big}
+                  {s.href ? (
+                    <a href={s.href} target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
+                      {s.big}
+                    </a>
+                  ) : s.big}
                 </div>
                 <div className="mt-1 text-sm leading-snug text-neutral-500">
                   {s.small}
@@ -288,13 +299,13 @@ export default function Home() {
               Inbound recruiting
             </div>
             <p className="mt-2 text-[15px] leading-relaxed text-neutral-700">
-              On the strength of my open-source profile, Algora&apos;s Founder
-              &amp; CTO reached out about senior backend engineering roles at
-              venture-backed startups — including{" "}
+              Algora&apos;s Founder &amp; CTO contacted me directly via my
+              open-source profile about contract and engineering role
+              opportunities at venture-backed startups —{" "}
               <span className="font-medium text-ink">CodeRabbit</span> (Series
               C, $1B+ valuation) and{" "}
               <span className="font-medium text-ink">ComfyUI</span> (100k+
-              GitHub stars) — in the $300k+ range.
+              GitHub stars).
             </p>
           </div>
         </div>
@@ -309,7 +320,7 @@ export default function Home() {
               I&apos;m a high-school student who builds real software. I taught
               myself to code by shipping — a hackathon mental-health app that
               became a live product, a desktop game written from scratch in
-              Python, and a web agency with paying clients.
+              Python, and a web agency where I design sites for local businesses.
             </p>
             <p>
               I work across the stack: front-end interfaces, secure back-end
