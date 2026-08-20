@@ -22,6 +22,104 @@ export const projects = [
     featured: true,
   },
   {
+    name: "GreenLedger",
+    type: "Hackathon · OrionHackathon 2026",
+    year: "2026",
+    tagline: "Offline OCR agent that turns receipts into a household carbon footprint.",
+    description:
+      "An offline agent that OCRs grocery and utility receipts, classifies line items, and estimates household carbon footprint over time — no cloud OCR, no paid API keys, works fully on-device.",
+    tech: ["Python", "OCR"],
+    highlights: ["Fully offline pipeline", "Zero paid API dependencies"],
+    links: [
+      { label: "Code", href: "https://github.com/orbitwebsites-cloud/greenledger-carbon-agent" },
+    ],
+    featured: false,
+  },
+  {
+    name: "StudyLoop",
+    type: "Hackathon · Code for Humanity",
+    year: "2026",
+    tagline: "Offline PDF-to-flashcards with spaced repetition.",
+    description:
+      "Turns any PDF into flashcards and schedules review with the SM-2 spaced-repetition algorithm, running fully offline so it works without reliable internet access. Built for the Code for Humanity Devpost hackathon.",
+    tech: ["Python", "SM-2 algorithm"],
+    highlights: ["Offline PDF-to-flashcard pipeline", "SM-2 spaced repetition"],
+    links: [
+      { label: "Code", href: "https://github.com/orbitwebsites-cloud/studyloop-flashcards" },
+    ],
+    featured: false,
+  },
+  {
+    name: "SchemaSense",
+    type: "Hackathon · Evorozen Apex",
+    year: "2026",
+    tagline: "Ask a SQLite database plain-English questions.",
+    description:
+      "Ask a SQLite database a question in plain English and get back the answer plus an ER diagram highlighting exactly which tables and relationships were used to derive it. Built for the Evorozen Apex: NextGen AI Buildathon.",
+    tech: ["Python", "SQLite", "ER diagramming"],
+    highlights: ["NL-to-SQL with explainable joins", "Auto-generated ER diagrams"],
+    links: [
+      { label: "Code", href: "https://github.com/orbitwebsites-cloud/schemasense-db-explorer" },
+    ],
+    featured: false,
+  },
+  {
+    name: "DevRadar",
+    type: "Hackathon · Code Carnage 2026",
+    year: "2026",
+    tagline: "Static-analysis security scanner with plain-English fixes.",
+    description:
+      "Finds common misconfigurations via static analysis, explains each one in plain English, and drafts a real fix — with zero paid API keys required.",
+    tech: ["Python", "Static analysis"],
+    highlights: ["Plain-English vulnerability explanations", "Zero paid API keys"],
+    links: [
+      { label: "Code", href: "https://github.com/orbitwebsites-cloud/devradar-security-agent" },
+    ],
+    featured: false,
+  },
+  {
+    name: "Inference Orchestrator",
+    type: "Hackathon · AI Infra Summit",
+    year: "2026",
+    tagline: "Cost/latency/quality-aware LLM request router.",
+    description:
+      "An auto-scaling inference orchestrator that routes LLM requests across providers based on live cost, latency, and quality signals. Built for the AI Infra Summit Hackathon.",
+    tech: ["JavaScript", "LLM routing"],
+    highlights: ["Multi-provider auto-scaling router", "Cost/latency/quality-aware routing"],
+    links: [
+      { label: "Code", href: "https://github.com/orbitwebsites-cloud/inference-orchestrator" },
+    ],
+    featured: false,
+  },
+  {
+    name: "DataHub SQL Agent",
+    type: "Hackathon",
+    year: "2026",
+    tagline: "Metadata-aware SQL agent with lineage explanation.",
+    description:
+      "A natural-language-to-SQL agent that explains query results with DataHub-shaped data lineage and flags anomalies — no paid API keys required.",
+    tech: ["Python", "SQL", "Data lineage"],
+    highlights: ["NL-to-SQL", "Lineage-aware anomaly flagging"],
+    links: [
+      { label: "Code", href: "https://github.com/orbitwebsites-cloud/datahub-sql-agent" },
+    ],
+    featured: false,
+  },
+  {
+    name: "Agentic Supply Chain Optimizer",
+    type: "Hackathon · AI Genesis 2026",
+    year: "2026",
+    tagline: "Autonomous reroute/renegotiation agent for supply chains.",
+    description:
+      "Pulls live free weather and news signals into a rule-based risk engine, then an autonomous agent reroutes or renegotiates shipments in response — visualized on a real-time Streamlit dashboard. Built for AI Genesis 2026.",
+    tech: ["Python", "Streamlit"],
+    highlights: ["Live weather/news risk signals", "Autonomous reroute/renegotiation agent", "Real-time dashboard"],
+    links: [
+      { label: "Code", href: "https://github.com/orbitwebsites-cloud/agentic-supply-chain-optimizer" },
+    ],
+    featured: false,
+  },
+  {
     name: "After the Tornado",
     type: "Game",
     year: "2026",
