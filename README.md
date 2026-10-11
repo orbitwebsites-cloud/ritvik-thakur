@@ -42,6 +42,15 @@ npm run dev   # http://localhost:3000
 
 Project data lives in [`app/projects.js`](app/projects.js); identity/contact in the `ME` object atop [`app/page.js`](app/page.js).
 
+### x402 bot paywall
+
+Humans browse free. AI crawlers and scrapers (matched by User-Agent, see `BOT_UA_PATTERNS` in [`lib/x402-bot-paywall.js`](lib/x402-bot-paywall.js)) get `HTTP 402` with [x402](https://x402.org) payment requirements ($0.001 USDC on Base per request). If they pay, they get the page, plus a `PAYMENT-RESPONSE` settlement header. Search engines, link-preview bots, uptime monitors, `/robots.txt`, sitemaps, `/llms.txt`, `/.well-known/*`, static assets and `/api/*` are always free. Any error or facilitator outage fails open, so the page is served normally.
+
+- Code: [`middleware.js`](middleware.js) (Node runtime) and [`lib/x402-bot-paywall.js`](lib/x402-bot-paywall.js), built on `@x402/core`, `@x402/evm` and `@coinbase/x402`
+- Config: see [`.env.example`](.env.example). `X402_ENABLED=false` turns it off.
+- Base mainnet needs `CDP_API_KEY_ID` + `CDP_API_KEY_SECRET` (Coinbase CDP facilitator). Without them, the paywall uses `X402_FACILITATOR_URL` (default `https://x402.org/facilitator`, which supports testnets only), so on mainnet it fails open.
+- Quick check: `curl -i -A GPTBot http://localhost:3000/` should return 402.
+
 ---
 
 © Ritvik Thakur
